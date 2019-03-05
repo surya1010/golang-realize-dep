@@ -67,6 +67,7 @@ RUN go get -u github.com/golang/dep/...
 #RUN dep ensure
 
 RUN go get github.com/oxequa/realize
+RUN go get github.com/pilu/fresh
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
