@@ -59,12 +59,16 @@ RUN set -eux; \
 ENV GOPATH /go
 ENV PATH $GOPATH/bin:/usr/local/go/bin:$PATH
 
+RUN apk add git
+
 
 # Go dep!
 RUN go get -u github.com/golang/dep/...
-RUN dep ensure
+#RUN dep ensure
 
 RUN go get github.com/oxequa/realize
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
+
+CMD ["realize", "start"] 
