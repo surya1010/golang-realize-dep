@@ -70,5 +70,3 @@ RUN go get github.com/oxequa/realize
 
 RUN mkdir -p "$GOPATH/src" "$GOPATH/bin" && chmod -R 777 "$GOPATH"
 WORKDIR $GOPATH
-
-CMD ["realize", "start"] 
